@@ -1,56 +1,25 @@
 package bowling;
 
-public class Frame {
+public interface Frame {
+
+	void registerRoll(int pins);
+
+	boolean isClosed();
+
+	int score();
+
+	int getFirstBonus();
+
+	int getSecondBonus();
+
+	void setNext(Frame next);
 	
-	private int first;
-	private int second;
-	private int numRolls;
-	Frame next;
+	boolean isStrike();
+	
+	boolean isSpare();
+	
+	int getFirstRoll();
 
-	public void registerRoll(int pins) {
-		if (invalidNumberOfPins(pins))
-			throw new IllegalArgumentException();
-		if (invalidResultingScore(pins))
-			throw new IllegalArgumentException();
-		
-		registerCurrentRoll(pins);
-	}
-
-	private void registerCurrentRoll(int pins) {
-		switch (numRolls) {
-		case 0:
-			first = pins;
-			break;
-		case 1:
-			second = pins;
-			break;
-		default:
-			throw new IllegalStateException(); 
-		}
-		numRolls++;
-	}
-
-	private boolean invalidResultingScore(int pins) {
-		return first + second + pins > 10;
-	}
-
-	private boolean invalidNumberOfPins(int pins) {
-		return pins < 0 || pins > 10;
-	}
-
-	public int score() {
-		int partialScore = first + second;
-		if (first == 10)
-			return partialScore + next.first + next.second;
-		
-		if (partialScore == 10) 
-			return partialScore + next.first;
-		
-		return partialScore;
-	}
-
-	public void setNext(Frame next) {
-		this.next = next;
-	}
+	int getSecondRoll();
 
 }
