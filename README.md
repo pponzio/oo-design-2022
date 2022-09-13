@@ -1,3 +1,9 @@
-## Repositorio del curso "Diseño de Software Orientado a Objetos". 
+## Repositorio del curso "Diseño de Software Orientado a Objetos"
 
-### Universidad Nacional de Río Cuarto. Año 2022.
+### Institución: Universidad Nacional de Río Cuarto. Año: 2022.
+
+### Créditos
+
+Varios ejemplos tomados de:
+
+https://github.com/bethrobson/Head-First-Design-Patterns
